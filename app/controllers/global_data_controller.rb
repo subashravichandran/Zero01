@@ -52,7 +52,7 @@ class GlobalDataController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def global_datum_params
-      params.require(:global_datum).permit(fx_rates: {})
+      params.require(:global_datum).permit(fx_rates: ::GlobalDatumConstant::COUNTRIES_LIST)
     end
 
     def retrieve_record_if_exist
