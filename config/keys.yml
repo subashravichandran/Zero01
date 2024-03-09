@@ -1,0 +1,4 @@
+freecurrencyapi:
+  base_url: https://api.freecurrencyapi.com/
+  version: v1/latest
+  master_key: fca_live_U1Fe5afC7HRrssNeh1hf3i2Y7VGH810GjJElyaWN
