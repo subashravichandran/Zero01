@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_11_022943) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_05_144012) do
+  create_table "guess_games", force: :cascade do |t|
+    t.string "question"
+    t.integer "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.text "description"
