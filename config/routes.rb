@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :global_data
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :tasks
       resources :guess_game, only: %i[show update]
+      resources :global_data
     end
   end
 end

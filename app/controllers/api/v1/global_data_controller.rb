@@ -1,4 +1,4 @@
-class GlobalDataController < ApplicationController
+class Api::V1::GlobalDataController < ApplicationController
   before_action :set_global_datum, only: %i[ show update destroy ]
   before_action :retrieve_record_if_exist, only: :create
 
@@ -21,9 +21,9 @@ class GlobalDataController < ApplicationController
     else
       api_response = ::ApiCalls::CurrencyExchangeApi.new().fetch_todays_exchange_rates
       if api_response[:success]
-        params[:global_datum][:fx_rates] = api_response[:data]
+        params[:global_datum] = { fx_rates: api_response[:data] }
         @global_datum = GlobalDatum.new(global_datum_params)
-        render json: @global_datum, status: :created, location: @global_datum if @global_datum.save
+        render json: @global_datum, status: :created if @global_datum.save
       else
         render json: @global_datum.errors, status: :unprocessable_entity
       end

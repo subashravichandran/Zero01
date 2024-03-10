@@ -4,12 +4,14 @@ import Game from './components/game';
 import FetchData from './Middleware/fetch_data';
 import * as k from './constants'
 import { useEffect, useState } from 'react';
+import Dashboard from './components/dashboard'
 
 function App() {
   return (
     <>
-      <DisplayGame />
-      <PromptAnswer />
+      <Dashboard />
+      {/* <DisplayGame /> */}
+      {/* <PromptAnswer /> */}
       {/* <Task /> */}
     </>
   )
